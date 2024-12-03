@@ -23,6 +23,8 @@ if( !class_exists('MadSeo') ) {
             // add_filter( 'wp_title', 'MadSeo::filterTitle', 10, 2 );
             add_filter( 'document_title', 'MadSeo::filterTitle', 10, 2 );
             add_filter( 'wp_head', 'MadSeo::filterHead', 1, 0 );
+
+            add_action('admin_enqueue_scripts', 'MadOptions::default_og_image_script');
             
         }
 
