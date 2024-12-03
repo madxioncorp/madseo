@@ -17,7 +17,9 @@ This plugin is still in heavy development
 
 
 ## Frequently Asked Questions
-### Can we Chage the Title =
+
+### Can we Chage the Title
+
 Yes
 
 ## Changelog
