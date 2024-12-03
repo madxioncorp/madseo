@@ -1,0 +1,25 @@
+.MadSeoBox {
+    width: 100%;
+    padding: 0px;
+}
+
+.MadSeoInnerBox {
+    padding: 15px;
+    width: 96.9%;
+    background-color: #fefefe;
+    border-radius: 4px;
+}
+
+.MadSeoTitle {
+    font-weight: 700;
+    font-size: large;
+}
+
+.MadSeoTextarea {
+    width: 300px !important;
+    height: 120px;
+}
+
+.MadSeoInput {
+    width: 300px !important;
+}
