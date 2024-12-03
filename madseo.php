@@ -4,7 +4,7 @@
  * @version 0.0.1
  */
 /*
- * Plugin Name: MADSEO - Simple SEO Optimation for WP
+ * Plugin Name: MADSEO - Simple SEO Optimation
  * Plugin URI: https://mad.xion.my.id/
  * Description: This plugins will help You to manage the SEO of your WordPress website.
  * Author: Madxion Corp

@@ -94,11 +94,17 @@ if( !class_exists('MadOptions') ) {
                 'madseo_settings_section'
             );
 
+            add_settings_section(
+                'madseo_settings_og_section',
+                'OpenGraph Settings', 'MadOptions::og_settings_section_callback',
+                'madseo_options_page'
+            );
+
             add_settings_field(
                 'wpals_settings_field_default_og_image',
                 'Default Opengraph Image', 'MadOptions::default_og_image_callback',
                 'madseo_options_page',
-                'madseo_settings_section'
+                'madseo_settings_og_section'
             );
         }
 
@@ -127,12 +133,16 @@ if( !class_exists('MadOptions') ) {
             echo '<p>Title Format Configuration.</p>';
         }
 
+        public static function og_settings_section_callback() {
+            echo '<p>OpenGraph Settings.</p>';
+        }
+
         public static function home_tpl_title_callback() {
             // get the value of the setting we've registered with register_setting()
             $setting = get_option('madseo_home_tpl_title');
             // output the field
             ?>
-            <input type="text" name="madseo_home_tpl_title" value="<?php echo isset( $setting ) ? esc_attr( $setting ) : ''; ?>">
+            <input type="text" name="madseo_home_tpl_title" class="MadSeoInput" value="<?php echo isset( $setting ) ? esc_attr( $setting ) : ''; ?>">
                 
             <?php
         }
@@ -142,7 +152,7 @@ if( !class_exists('MadOptions') ) {
             $setting = get_option('madseo_single_tpl_title');
             // output the field
             ?>
-            <input type="text" name="madseo_single_tpl_title" value="<?php echo isset( $setting ) ? esc_attr( $setting ) : ''; ?>">
+            <input type="text" name="madseo_single_tpl_title" class="MadSeoInput"  value="<?php echo isset( $setting ) ? esc_attr( $setting ) : ''; ?>">
                 
             <?php
         }
@@ -181,10 +191,17 @@ if( !class_exists('MadOptions') ) {
             // get the value of the setting we've registered with register_setting()
             $setting = get_option('madseo_default_og_image');
             // output the field
+            if( $setting != "" ) {
             ?>
+            <div class="display-og-image" id="display-og-image">
+                <img src="<?php echo esc_url($setting);?>" class="og-image" id="og-image">
+            </div>
+            <?php 
+            }
 
+            ?>
             <label for="upload_image">
-                <input id="upload_image" type="text" size="36" name="madseo_default_og_image" value="<?php echo $setting;?>" /> 
+                <input id="upload_image" type="text" size="36" name="madseo_default_og_image" value="<?php echo esc_url( $setting );?>" /> 
                 <input id="upload_image_button" class="button" type="button" value="Upload Image" />
                 <br />Enter a URL or upload an image
             </label>

@@ -1,4 +1,4 @@
-=== MADSEO - Simple SEO Optimation for WP ===
+=== MADSEO - Simple SEO Optimation ===
 
 Contributors:      madxioncorp
 Tested up to:      6.7

@@ -23,3 +23,7 @@
 .MadSeoInput {
     width: 300px !important;
 }
+
+.og-image {
+    max-width: 300px !important;
+}

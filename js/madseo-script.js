@@ -28,6 +28,7 @@ jQuery(document).ready(function($){
             console.log(custom_uploader.state().get('selection').toJSON());
             attachment = custom_uploader.state().get('selection').first().toJSON();
             $('#upload_image').val(attachment.url);
+            $('#og-image').attr('src', attachment.url);
         });
 
         //Open the uploader dialog
